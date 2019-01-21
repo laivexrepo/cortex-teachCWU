@@ -43,6 +43,10 @@ void autonomous() {
       compAutoRedRight();
      break;
 
+     case 3:
+       drivePID(80);
+     break;
+     
      default:
 
      break;
