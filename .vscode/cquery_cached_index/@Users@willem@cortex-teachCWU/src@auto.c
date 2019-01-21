@@ -46,9 +46,9 @@ void autonomous() {
      case 3:
        drivePID(80);
      break;
-     
-     default:
 
+     default:
+       // default case shoudl not run anything or competition autonomous
      break;
   }
 }
