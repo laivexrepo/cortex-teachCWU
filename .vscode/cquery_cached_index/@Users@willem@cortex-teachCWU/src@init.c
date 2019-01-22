@@ -19,6 +19,7 @@
  * configure a UART port (usartOpen()) but cannot set up an LCD (lcdInit()).
  */
 void initializeIO() {
+  watchdogInit();             // call the wathcdog timer incase of ESD reboot
 }
 
 /*

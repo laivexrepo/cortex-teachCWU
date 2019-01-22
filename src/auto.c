@@ -26,7 +26,7 @@
  * so, the robot will await a switch to another mode or disable/enable cycle.
  */
 
-int autoState = 0;
+int autoState = 1;
 
 void autonomous() {
    // run different autonomous routines based on the valye of autoState; autoState
@@ -36,7 +36,8 @@ void autonomous() {
      case 0:
        drivePID(60);      //will run forever until powered off
      case 1:
-       testAutoDrive();
+       driveForDistancePID(36, 60);     // for 36" at speed 60
+       pivotTurn(0, 30, 90);
      break;
 
      case 2:
