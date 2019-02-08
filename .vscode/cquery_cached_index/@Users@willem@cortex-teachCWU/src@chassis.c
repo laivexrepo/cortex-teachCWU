@@ -103,7 +103,7 @@ void driveForDistancePID(int distance, int speed) {
 
   if(DEBUG_ON) {
     printf("Dist: %1.2f \n", motorDegree);
-    wait(200);                        // Let terminal catch up
+    delay(200);                        // Let terminal catch up
   }
 
   if(masterPower == 0 ) {
