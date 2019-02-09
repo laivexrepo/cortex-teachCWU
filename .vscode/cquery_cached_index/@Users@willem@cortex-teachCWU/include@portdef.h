@@ -26,6 +26,11 @@
 #define QUAD_TOP_RM_PORT 1
 #define QUAD_BOTTOM_RM_PORT 2
 
+#define LIMSWITCH_PORT 5      // digital input port
+
+// ---------------- Analog Sensors --------------------------------------
+#define POT_PORT 1            // analog input port
+
 // ----------- Is DEBUGGING ON ---------------------------------------
 #define DEBUG_ON true
 #define VEXNET_MANUAL true        // turns opcontrol into allowing for
