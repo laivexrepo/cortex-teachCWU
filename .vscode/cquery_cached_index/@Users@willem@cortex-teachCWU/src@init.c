@@ -20,6 +20,7 @@
  */
 void initializeIO() {
   watchdogInit();             // call the wathcdog timer incase of ESD reboot
+  pinMode(LIMSWITCH_PORT, INPUT);
 }
 
 /*

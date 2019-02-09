@@ -9,4 +9,8 @@
 // function to move the lift arm up and down
 void liftMove(int speed);
 
+void liftMoveAngle (int speed, int angle);
+
+void liftCalibrate(int speed);
+
 #endif // _LIFT_H_
