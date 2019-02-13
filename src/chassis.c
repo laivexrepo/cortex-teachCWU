@@ -103,7 +103,9 @@ void driveForDistancePID(int distance, int speed) {
   float motorDegree = (distance / wheelCircum) * 360;  // cast into full degrees
 
   if(DEBUG_ON) {
-    printf("Dist: %1.2f \n", motorDegree);
+    printf("DIStance: %d ", distance);
+    printf(" Speed: %d ", speed);
+    printf(" Dist: %1.2f \n", motorDegree);
     delay(200);                        // Let terminal catch up
   }
 
@@ -118,6 +120,18 @@ void driveForDistancePID(int distance, int speed) {
   int slavePower = speed - 5;
   int error = 0;
   int kp = 5;                       // can be tuned to help zig-zag and accuracy, be careful!
+
+  // We need to account for direction - thsi means speed values need to be
+  // flipped if we drive backawards i.e. when we get a negative Distance
+  if(distance < 0 ) {
+    // we are driving backwards - so we need to flip speed
+    masterPower = masterPower * -1;
+    slavePower = slavePower * -1;
+  }
+  if(DEBUG_ON){
+    printf("Master Power: %d", masterPower);
+    printf(" SlavePower: %d \n", slavePower);
+  }
 
   encoderReset(encoderLM);
   encoderReset(encoderRM);
@@ -200,7 +214,7 @@ void pivotTurn(int direction, int speed, float angle) {
     encoderReset(encoderLM);
     delay(10);                   // give encoder time to reset
 
-    while(encoderGet(encoderRM) <= motorDegree) {
+    while(encoderGet(encoderLM) <= motorDegree) {
       if(DEBUG_ON){
         printf("encoderLM: %d \n", encoderGet(encoderLM));
       }
@@ -216,7 +230,7 @@ void pivotTurn(int direction, int speed, float angle) {
     // on quadriatic encoders
     encoderReset(encoderRM);
 
-    while(encoderGet(encoderLM) <= motorDegree) {
+    while(encoderGet(encoderRM) <= motorDegree) {
       if(DEBUG_ON){
         printf("encoderRM: %d \n", encoderGet(encoderRM));
       }
