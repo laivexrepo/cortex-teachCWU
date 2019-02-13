@@ -1,6 +1,7 @@
 #include "main.h"    // includes API.h and other headers
 #include "chassis.h" // ensures that the corresponding header file (chassis.h) is included
 #include "portdef.h" // All port defintions on the cortex need to be included
+#include "math.h"
 
 // Place all chassis specific functions here, forexample
 // void driveForDistancePD(int speed, int distance) {}
@@ -121,7 +122,7 @@ void driveForDistancePID(int distance, int speed) {
   encoderReset(encoderLM);
   encoderReset(encoderRM);
 
-  while(abs(totalTicks) < motorDegree)
+  while(abs(totalTicks) < fabs(motorDegree))
   {
     //Set the motor powers to their respective variables.
     motorSet(LEFT_M_FRONT, masterPower);
@@ -147,7 +148,8 @@ void driveForDistancePID(int distance, int speed) {
     }
 
     //Add this iteration's encoder values to totalTicks.
-    totalTicks+= encoderGet(encoderLM);
+    // we are lawys doing 'positive travel distance compare'
+    totalTicks+= abs(encoderGet(encoderLM));
     if(DEBUG_ON) {
       printf("error: %d", error);
       printf(" slavePower: %d", slavePower);
