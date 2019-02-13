@@ -49,39 +49,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/init.c.o",
-            "src/init.c"
+            "bin/autoroutines.c.o",
+            "src/autoroutines.c"
         ],
         "directory": "/Users/willem/cortex-teachCWU",
-        "file": "src/init.c"
-    },
-    {
-        "arguments": [
-            "clang++",
-            "-c",
-            "-target",
-            "armv7ar-none-none-eabi",
-            "-isystem/usr/local/Caskroom/gcc-arm-embedded/7-2018-q2-update/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/include",
-            "-isystem/usr/local/Caskroom/gcc-arm-embedded/7-2018-q2-update/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/include-fixed",
-            "-isystem/usr/local/Caskroom/gcc-arm-embedded/7-2018-q2-update/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include",
-            "-isystem./include",
-            "-iquote./include/./",
-            "-mthumb",
-            "-mcpu=cortex-m3",
-            "-mlittle-endian",
-            "-Os",
-            "-ffunction-sections",
-            "-fsigned-char",
-            "-fomit-frame-pointer",
-            "-fsingle-precision-constant",
-            "-fdiagnostics-color",
-            "-std=gnu99",
-            "-o",
-            "bin/chassis.c.o",
-            "src/chassis.c"
-        ],
-        "directory": "/Users/willem/cortex-teachCWU",
-        "file": "src/chassis.c"
+        "file": "src/autoroutines.c"
     },
     {
         "arguments": [
@@ -133,11 +105,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/opcontrol.c.o",
-            "src/opcontrol.c"
+            "bin/lift.c.o",
+            "src/lift.c"
         ],
         "directory": "/Users/willem/cortex-teachCWU",
-        "file": "src/opcontrol.c"
+        "file": "src/lift.c"
     },
     {
         "arguments": [
@@ -161,11 +133,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/autoroutines.c.o",
-            "src/autoroutines.c"
+            "bin/chassis.c.o",
+            "src/chassis.c"
         ],
         "directory": "/Users/willem/cortex-teachCWU",
-        "file": "src/autoroutines.c"
+        "file": "src/chassis.c"
     },
     {
         "arguments": [
@@ -217,11 +189,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/lift.c.o",
-            "src/lift.c"
+            "bin/auto.c.o",
+            "src/auto.c"
         ],
         "directory": "/Users/willem/cortex-teachCWU",
-        "file": "src/lift.c"
+        "file": "src/auto.c"
     },
     {
         "arguments": [
@@ -245,10 +217,38 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/auto.c.o",
-            "src/auto.c"
+            "bin/init.c.o",
+            "src/init.c"
         ],
         "directory": "/Users/willem/cortex-teachCWU",
-        "file": "src/auto.c"
+        "file": "src/init.c"
+    },
+    {
+        "arguments": [
+            "clang++",
+            "-c",
+            "-target",
+            "armv7ar-none-none-eabi",
+            "-isystem/usr/local/Caskroom/gcc-arm-embedded/7-2018-q2-update/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/include",
+            "-isystem/usr/local/Caskroom/gcc-arm-embedded/7-2018-q2-update/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/include-fixed",
+            "-isystem/usr/local/Caskroom/gcc-arm-embedded/7-2018-q2-update/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include",
+            "-isystem./include",
+            "-iquote./include/./",
+            "-mthumb",
+            "-mcpu=cortex-m3",
+            "-mlittle-endian",
+            "-Os",
+            "-ffunction-sections",
+            "-fsigned-char",
+            "-fomit-frame-pointer",
+            "-fsingle-precision-constant",
+            "-fdiagnostics-color",
+            "-std=gnu99",
+            "-o",
+            "bin/opcontrol.c.o",
+            "src/opcontrol.c"
+        ],
+        "directory": "/Users/willem/cortex-teachCWU",
+        "file": "src/opcontrol.c"
     }
 ]

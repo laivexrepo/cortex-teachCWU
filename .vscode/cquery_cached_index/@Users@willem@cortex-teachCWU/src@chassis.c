@@ -198,7 +198,7 @@ void pivotTurn(int direction, int speed, float angle) {
     encoderReset(encoderLM);
     delay(10);                   // give encoder time to reset
 
-    while(encoderGet(encoderLM) <= motorDegree) {
+    while(encoderGet(encoderRM) <= motorDegree) {
       if(DEBUG_ON){
         printf("encoderLM: %d \n", encoderGet(encoderLM));
       }
@@ -214,7 +214,7 @@ void pivotTurn(int direction, int speed, float angle) {
     // on quadriatic encoders
     encoderReset(encoderRM);
 
-    while(encoderGet(encoderRM) <= motorDegree) {
+    while(encoderGet(encoderLM) <= motorDegree) {
       if(DEBUG_ON){
         printf("encoderRM: %d \n", encoderGet(encoderRM));
       }
