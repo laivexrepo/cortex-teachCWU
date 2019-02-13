@@ -114,6 +114,15 @@ void operatorControl() {
        moveClaw(0);           // no buttons are pressed, stop the lift
     }
 
+    // Lift Calibration Function
+    if(joystickGetDigital(1, 7, JOY_UP)) {
+       liftCalibrate(30);         // pressing up, so lift should go up
+    }
+    // lift Anglre Move test
+    if(joystickGetDigital(1, 7, JOY_DOWN)) {
+       liftMoveAngle(30, 0);         // pressing up, so lift should go up
+    }
+    
 		delay(20);     // We need the electronics time to react to the processor commands
 	}
 }
